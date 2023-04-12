@@ -6,19 +6,23 @@
 int main(void)
 {
     char m[N];
-    int i=0, ch;
+    char *p = m;
+    int ch;
     printf("Enter a message: ");
     while((ch = getchar()) != '\n')
     {
-        m[i] = ch;
-        i++;
+        *p++ = ch;
     }
-
+    
     printf("Reversal is: ");
-    for(i=i-1;i>=0;i--)
-    {
-        printf("%c", m[i]);
-    }
+
+    // for(;p>=m;p--)
+    // {
+    //     printf("%c", *p);
+    // }
+
+    while(p>m)
+        printf("%c", *p--);
     printf("\n");
     return 0;
 }
