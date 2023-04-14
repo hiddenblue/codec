@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include "stack.h"
 
+
 #define STACK_SIZE 100
 
 /* external variable */
