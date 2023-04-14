@@ -4,6 +4,10 @@
         "stdlib.h": "c",
         "time.h": "c",
         "stdio.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "quicksort_recursive.h": "c",
+        "quicksort_recursive2.h": "c",
+        "RPN.C": "c",
+        "RPN2.C": "c"
     }
 }
