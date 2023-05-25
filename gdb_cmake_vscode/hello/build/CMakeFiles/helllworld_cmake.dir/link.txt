@@ -1,0 +1,1 @@
+/usr/bin/gcc -rdynamic CMakeFiles/helllworld_cmake.dir/hello.c.o -o helllworld_cmake 

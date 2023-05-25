@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <stdint.h>
+#include <inttypes.h>
 
 int main(void)
 {
-    int a[10] = {1, 2, 3, 4};
-    printf("%d\n", (int) sizeof(a)/sizeof(a[0]));
+    int32_t a;
+    // scanf("%"SCNd32, &a);
+    printf("%"PRId32 "\n", a);
     
 
 

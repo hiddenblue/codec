@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/my_cmake_exe.dir/main.c.o CMakeFiles/my_cmake_exe.dir/src/structdef.c.o -o my_cmake_exe 

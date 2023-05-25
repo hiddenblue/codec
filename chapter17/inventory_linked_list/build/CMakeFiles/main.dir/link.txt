@@ -1,0 +1,1 @@
+/usr/bin/gcc -g -rdynamic CMakeFiles/main.dir/main.c.o CMakeFiles/main.dir/src/inventory.c.o CMakeFiles/main.dir/src/read_line.c.o -o main 

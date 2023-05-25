@@ -1,0 +1,3 @@
+/home/rong/codec/chapter16/inventory2/build/CMakeFiles/inventory.dir
+/home/rong/codec/chapter16/inventory2/build/CMakeFiles/edit_cache.dir
+/home/rong/codec/chapter16/inventory2/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+/home/rong/codec/gdb_cmake_vscode/hello/build/CMakeFiles/helllworld_cmake.dir
+/home/rong/codec/gdb_cmake_vscode/hello/build/CMakeFiles/edit_cache.dir
+/home/rong/codec/gdb_cmake_vscode/hello/build/CMakeFiles/rebuild_cache.dir

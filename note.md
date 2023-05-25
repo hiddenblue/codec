@@ -1,3 +1,31 @@
+## 碎碎念
+
+**C语言中优先级最高的运算符**
+1. 数组下标
+2. 函数调用()
+3. 结构体取成员 . ->
+4. 后缀的++ 
+5. 后缀的--
+
+特别注意结构体指针用. ->访问，取成员符号优先级高于指针的*所以需要访问结构体指针的成员需要用(*a).real这样的
+
+**输入输出的格式控制符**
+
+整数一般用%d, short int 用hd； 长整数long ，用ld
+长长整数，用lld
+
+
+浮点类型 float 用%f  double双精度浮点数用lf 
+long double 用Lf
+
+
+**千万别把提示输入的字符放在scanf的输入格式控制符里面**
+这不是Python！
+
+
+
+
+
 ## chapter 9 函数
 
 **字符串可以作为数组的下标，需要对常量字符进行缩放处理**
@@ -393,7 +421,7 @@ int find_the_gcd(int num1, int num2)
 
 ## chapter12 指针和数组
 
-指针的算术运算
+###指针的算术运算
 
 当指针指向数组中某个元素的地址时，比如&a[0]，可以对指针进行算术运算。
 支持三种：
@@ -743,14 +771,14 @@ int main(int argc, char *argv[])
         printf("%s\n", *p);
 }
 
-➜  chapter13 git:(master) ✗ ./argc_argv 1 2 3
+  chapter13 git:(master) ✗ ./argc_argv 1 2 3
 4
 ./argc_argv
 1
 2
 3
  
-➜  chapter13 git:(master) ✗ 
+  chapter13 git:(master) ✗ 
  ```
 
 ### stdlib.h中的实用函数
@@ -787,6 +815,7 @@ atol atoi atof
 ```
 
 在**逆转字符串**和**判断回文序列**里面都有，双指针方法，一个指向头，另一个用while(*p)的方法指向空字符然后-1，开始循环，直到两个相遇，奇数个是指向同一个地址，偶数个是先start小于end，然后循环最后一次，end小于start，同时start++ end--
+
 ```c
 void reverse(char *message)
 {
@@ -807,61 +836,7 @@ void reverse(char *message)
         start++;
         end--;
     }   
-}
-```
+}  
+ ```
 
-## chapter 15
-
-将程序分割成很多个源文件(.c文件)，相关的变量和函数放进一个文件中
-
-1. 结构清晰
-2. 节省编译变动后需要的编译时间
-3. 方便复用。
-
-计算逆波兰数的例子
-分为stack.c stack.h calc.c  token.c
-
-#inlcude <filename> 编译时去系统的/usr/include查找
-
-
-#include "filename" 搜索当前目录，然后搜索系统头文件所在的目录
-
-不能混用，可以带路径，但不推荐
-
-#include "..\include\util.h"
-
-### 共享宏定义和类型定义，用include实现
-
-### 共享函数原型
-要么在.c文件中声明函数的原型，要么就在.h文件中声明，并且include进.c里面去
-
-### 共享变量声明
-
-对于外部变量或者全局变量的使用
-
-声明这个变量是在别处定义的，用
-`extern int i;`
-
-为了共享她，可以把i放在一个文件中，
-`int i;`
-
-其他部位调用按上面的声明调用。这些文件就都可以访问或者修改变量i
-
-**通常把共享变量的定义放在头文件中，需要调用就包含对应的头文件，如果是为它定义的源文件需要包含它的声明**
-
-**含有类型定义时，重复包含会产生错误**
-
-```c
-#ifndef _STDC_
-#error This header requires a Standard C compiler
-#endif
-```
-
-foo.c foo.h中，foo.h中不应该包含只在foo.c内部使用的函数原型，。
-
-### 构建多文件程序
-
-有时候需要重新构建，
-
-1. 修改只影响一个源文件，只有此文件需要重新编译。后面需要重新链接
-2. 影响了头文件，需要重新编译包含此头文件的所有文件。
+ 

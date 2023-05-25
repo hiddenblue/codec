@@ -1,0 +1,1 @@
+/usr/bin/gcc -g -rdynamic CMakeFiles/inventory.dir/main.c.o CMakeFiles/inventory.dir/src/inventory.c.o CMakeFiles/inventory.dir/src/read_line.c.o -o inventory 

@@ -1,0 +1,19 @@
+AREA COPY,CODE,READONLY ; section name is copy
+    ENTRY
+
+START
+    LDR R0,=SRC
+    LDR R1,=DST
+    MOV R2,#10
+
+LOOP
+    LDR R3,[R0],#4
+    STR R3,[R1],#4
+    SUBS R2, R2,#4
+    BNE LOOP
+
+AREA COPYDATA,DATA,READWRITE ; data name is COPYDATA
+SRC DCD 1,2,3,4,5,6,7,8,9,0
+DST DCD 0,0,0,0,0,0,0,0,0,0
+    END
+
