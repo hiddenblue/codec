@@ -1,18 +1,43 @@
 #include <stdio.h>
-#include <string.h>
+#include <inttypes.h>
+#include <stdint.h>
 
-typedef struct {
-    unsigned short year;
-    unsigned char month;
-    unsigned char day;
-} Date;
+void getdigit(uint32_t number, uint8_t length);
 
-int main(int argc, char *argv[])
+int main()
 {
-    Date Today;
-    Today.year = 2023;
-    Today.month = 5;
-    Today.day = 9;
-    printf("%d-%d-%d", Today.year, Today.month, Today.day);
+    uint32_t target;
+    uint8_t length;
+    printf("input the uint32t number:");
+    scanf("%"SCNu32, &target);
+    printf("%"PRIu32, target);
+    printf("\n");
+    printf("input length of number:");
+    scanf("%"SCNu8, &length);
+    printf("%"PRIu8, length);
+    printf("\n");
+
+    getdigit(target, length);
+
     return 0;
+}
+
+
+void getdigit(uint32_t number, uint8_t length)
+{
+    uint8_t digit, array[length];
+    for(length;length>0;length--)
+    {
+        digit = number%10;
+        array[length-1] = digit;
+        number /= 10;
+    }
+
+    uint8_t *p = array;
+    while(p < array+4)
+    {
+        printf("%"PRIu8, *p);
+        p++;
+    }
+        printf("\n");
 }
